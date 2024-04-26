@@ -1,0 +1,7 @@
+<ul *ngIf="inventory$ | async as stocks else noData">
+    <li *ngFor="let stock of stocks.stock">
+        {{stock.productName}}({{stock.category}})
+    </li> 
+</ul>
+<ng-template #noData>No Data Available</ng-template>
+<button class="button" (click)="restockInventory()">Re-stock</button>
